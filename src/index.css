@@ -7,10 +7,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Outfit", sans-serif;
-  transition: all 0.5 ease;
 }
 
 #root{
   min-height: 100vh;
   display: flex;
+}
+
+body{
+  transition: all 0.5 ease;
 }
