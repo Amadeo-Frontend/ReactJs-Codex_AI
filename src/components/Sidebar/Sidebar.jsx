@@ -1,6 +1,12 @@
 import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Context } from "../../Context/Context";
+import {
+  BsCodeSlash,
+  BsGithub,
+  BsInstagram,
+  BsLinkedin,
+} from "react-icons/bs";
 
 const Sidebar = () => {
   const [extended, setExtended] = useState(false);
@@ -11,7 +17,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar hidden min-h-screen px-4 py-4 md:flex flex-col justify-between bg-[#f0f4f9]">
+    <div className="sidebar hidden min-h-screen px-4 py-4 md:flex flex-col items-center justify-between bg-[#f0f4f9]">
       <div className="top">
         <img
           onClick={() => setExtended((prev) => !prev)}
@@ -19,7 +25,10 @@ const Sidebar = () => {
           src={assets.menu_icon}
           alt="menu icon"
         />
-        <div onClick={()=>newChat()} className="new-chat mt-12 inline-flex items-center gap-3 px-3 py-2 bg-[#e6eaf1] rounded-full text-sm text-gray-500 cursor-pointer hover:scale-105">
+        <div
+          onClick={() => newChat()}
+          className="new-chat mt-12 inline-flex items-center gap-3 px-3 py-2 bg-[#e6eaf1] rounded-full text-sm text-gray-500 cursor-pointer hover:scale-105"
+        >
           <img className="w-5" src={assets.plus_icon} alt="plus icon" />
           {extended ? <p className="font-medium">New Chat</p> : null}
         </div>
@@ -30,7 +39,7 @@ const Sidebar = () => {
               return (
                 <div
                   key={index}
-                  onClick={()=>loadPrompt(item)}
+                  onClick={() => loadPrompt(item)}
                   className="recent-entry flex items-center gap-3 p-3 pr-10 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]"
                 >
                   <img
@@ -45,19 +54,31 @@ const Sidebar = () => {
           </div>
         ) : null}
       </div>
-      <div className="bottom">
-        <div className="bottom-item flex items-center gap-3 p-3 pr-10 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
-          <img className="w-5" src={assets.question_icon} alt="question icon" />
-          {extended ? <p>Help</p> : null}
-        </div>
-        <div className="bottom-item flex items-center gap-3 p-3 pr-10 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
-          <img className="w-5" src={assets.history_icon} alt="history icon" />
-          {extended ? <p>Activity</p> : null}
-        </div>
-        <div className="bottom-item flex items-center gap-3 p-3 pr-10 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
-          <img className="w-5" src={assets.setting_icon} alt="setting icon" />
-          {extended ? <p>Settings</p> : null}
-        </div>
+      <div className="flex flex-col gap-3 bottom">
+        <a href="https://github.com/Amadeo-Frontend">
+          <div className="bottom-item  flex items-center gap-3 p-3 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
+            <BsGithub />
+            {extended ? <p>Github</p> : null}
+          </div>
+        </a>
+        <a href="https://www.instagram.com/amadeo_bon/">
+          <div className="bottom-item flex items-center gap-3 p-3 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
+            <BsInstagram className="fill-red-600" />
+            {extended ? <p>Instagram</p> : null}
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/amadeo-bon/">
+          <div className="bottom-item flex items-center gap-3 p-3 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
+            <BsLinkedin className="fill-blue-500" />
+            {extended ? <p>Linkedin</p> : null}
+          </div>
+        </a>
+
+        {extended ? (
+          <p className="text-[13px] my-3 text-center font-[300] flex gap-2 items-center">
+            <BsCodeSlash className="fill-sky-500" /> Developed by Amadeo Bon{" "}
+          </p>
+        ) : null}
       </div>
     </div>
   );

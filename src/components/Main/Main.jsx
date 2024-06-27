@@ -3,6 +3,8 @@ import { assets } from "../../assets/assets";
 import "./style.css";
 import { Context } from "../../Context/Context";
 import { BiUserCircle } from "react-icons/bi";
+import { BsSendFill } from "react-icons/bs";
+import CircleLoader from "react-spinners/CircleLoader";
 
 const Main = () => {
   const {
@@ -15,45 +17,18 @@ const Main = () => {
     input,
   } = useContext(Context);
 
-   // Handle theme change
-   const handleThemeChange = (e) => {
-    const isChecked = e.target.checked;
-    setTheme(isChecked ? "dark" : "light");
-  };
-
-  const getThemeColors = () => {
-    switch (theme) {
-      case "light":
-        return {
-          primary: "bg-white",
-          secondary: "bg-gray-100",
-          accent: "bg-cyan-500",
-          text: "text-gray-800",
-        };
-      case "dark":
-        return {
-          primary: "bg-gray-900",
-          secondary: "bg-gray-800",
-          accent: "bg-cyan-500",
-          text: "text-gray-100",
-        };
-      default:
-        return {
-          primary: "bg-white",
-          secondary: "bg-gray-100",
-          accent: "bg-cyan-500",
-          text: "text-gray-800",
-        };
-    }
-  };
-
   return (
     <div className="main flex-1 min-h-screen pb-[15vh] relative overflow-x-hidden">
       <div className="nav flex items-center justify-start gap-4 text-2xl p-5 text-[#585858]">
-      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="35" height="35" />
+        <img
+          src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png"
+          alt="Robot"
+          width="35"
+          height="35"
+        />
         <p className="font-bold">Codex AI</p>
       </div>
-      <div className="main-container max-w-[900px] m-auto">
+      <div className="main-container max-w-[900px] lg:mt-10 m-auto">
         {!showResult ? (
           <>
             <div className="greet mx-[50px] my-0 text-[56px] text-[#c4c7c5] font-[500] p-5">
@@ -132,7 +107,7 @@ const Main = () => {
         ) : (
           <div className="px-4 max-h-[70vh] overflow-y-scroll result">
             <div className="flex items-center gap-5 my-10 result-title bg-[#edf1f6] p-2 rounded-lg">
-              <BiUserCircle className="text-3xl fill-sky-500"/>
+              <BiUserCircle className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
             </div>
             <div className="flex items-start gap-5 p-2 rounded-lg result-data">
@@ -164,12 +139,16 @@ const Main = () => {
             />
             <div className="flex items-center">
               {input ? (
-                <img
-                  onClick={() => onSent()}
-                  className="w-5 cursor-pointer hover:scale-105"
-                  src={assets.send_icon}
-                  alt=""
-                />
+                loading ? (
+                  <CircleLoader
+                    size={25} color="#0EA5E9"
+                  />
+                ) : (
+                  <BsSendFill
+                    className="w-6 cursor-pointer fill-blue-600 hover:scale-105"
+                    onClick={() => onSent(input)}
+                  />
+                )
               ) : null}
             </div>
           </div>

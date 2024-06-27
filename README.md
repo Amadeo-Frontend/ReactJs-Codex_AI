@@ -1,8 +1,36 @@
-# React + Vite
+# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="35" height="35"/> Projeto Codex AI Chatbot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 Descrição
 
-Currently, two official plugins are available:
+O Projeto Codex AI Chatbot é uma aplicação web interativa que permite aos usuários enviar prompts e receber respostas geradas pela API da Gemini. 🚀‍🌐 Foi desenvolvido com o objetivo de demonstrar a integração com APIs externas e oferecer uma interface amigável para interações dinâmicas entre o usuário e a inteligência artificial. 🧠‍💡
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologias Utilizadas
+
+- **Front-end:** React
+- **Gerenciamento de Estado:** Context API do React
+- **Estilização:** CSS puro com TailwindCSS
+- **Ícones:** React Icons
+- **Loader:** react-loader-spinner
+- **API Externa:** Gemini API para geração de respostas
+
+## 🎈 Funcionalidades
+
+- Envio de prompts para a API da Gemini e exibição das respostas recebidas.
+- Loader animado durante o envio dos prompts.
+- Interface responsiva para diferentes dispositivos.
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas Se você encontrar um bug, tiver uma sugestão de melhoria ou quiser adicionar uma nova funcionalidade, sinta-se à vontade para criar um issue ou pull request. Siga estas etapas:
+
+1. Faça um fork do repositório.
+2. Crie um novo branch com sua contribuição (`git checkout -b feature/minha-contribuicao`).
+3. Faça commit das suas alterações (`git commit -am 'Adiciona minha contribuição'`).
+4. Faça push para o branch (`git push origin feature/minha-contribuicao`).
+5. Abra um Pull Request.
+
+## ⚙ Suporte 
+
+Se você encontrar algum problema ou tiver dúvidas sobre o uso deste projeto, por favor, abra um issue para discussão.
+
+Desenvolvido com ❤️ por Amadeo Bon para contribuir com a comunidade de desenvolvimento ReactJs. Boa navegação!
