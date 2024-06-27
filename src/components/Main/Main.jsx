@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { assets } from "../../assets/assets";
 import "./style.css";
 import { Context } from "../../Context/Context";
+import { BiUserCircle } from "react-icons/bi";
 
 const Main = () => {
   const {
@@ -14,27 +15,62 @@ const Main = () => {
     input,
   } = useContext(Context);
 
+   // Handle theme change
+   const handleThemeChange = (e) => {
+    const isChecked = e.target.checked;
+    setTheme(isChecked ? "dark" : "light");
+  };
+
+  const getThemeColors = () => {
+    switch (theme) {
+      case "light":
+        return {
+          primary: "bg-white",
+          secondary: "bg-gray-100",
+          accent: "bg-cyan-500",
+          text: "text-gray-800",
+        };
+      case "dark":
+        return {
+          primary: "bg-gray-900",
+          secondary: "bg-gray-800",
+          accent: "bg-cyan-500",
+          text: "text-gray-100",
+        };
+      default:
+        return {
+          primary: "bg-white",
+          secondary: "bg-gray-100",
+          accent: "bg-cyan-500",
+          text: "text-gray-800",
+        };
+    }
+  };
+
   return (
     <div className="main flex-1 min-h-screen pb-[15vh] relative overflow-x-hidden">
-      <div className="nav flex items-center justify-between text-2xl p-5 text-[#585858]">
-        <p>Gemini AI</p>
-        <img
-          className="w-10 rounded-full"
-          src={assets.user_icon}
-          alt="user icon"
-        />
+      <div className="nav flex items-center justify-start gap-4 text-2xl p-5 text-[#585858]">
+      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="Robot" width="35" height="35" />
+        <p className="font-bold">Codex AI</p>
       </div>
       <div className="main-container max-w-[900px] m-auto">
         {!showResult ? (
           <>
             <div className="greet mx-[50px] my-0 text-[56px] text-[#c4c7c5] font-[500] p-5">
               <p className="span">
-                <span className="text-lg md:text-4xl">Hello, Dev.</span>
+                <span className="text-xl md:text-4xl">Hello, Dev.</span>
               </p>
-              <p className="text-lg md:text-4xl">How can i help you today?</p>
+              <p className="text-xl md:text-4xl">How can i help you today?</p>
             </div>
             <div className="mb-16 md:mb-0 cards">
-              <div className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]">
+              <div
+                onClick={() =>
+                  setInput(
+                    "Suggest beautiful places to see on an upcoming road trip"
+                  )
+                }
+                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+              >
                 <p className="text-[#585858] text-[17px]">
                   Suggest beautiful places to see on an upcoming road trip.
                 </p>
@@ -44,7 +80,12 @@ const Main = () => {
                   alt="compass icon"
                 />
               </div>
-              <div className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]">
+              <div
+                onClick={() =>
+                  setInput("Briefly summarize this concept: urban planning")
+                }
+                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+              >
                 <p className="text-[#585858] text-[17px]">
                   Briefly summarize this concept: urban planning.
                 </p>
@@ -54,7 +95,14 @@ const Main = () => {
                   alt="compass icon"
                 />
               </div>
-              <div className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]">
+              <div
+                onClick={() =>
+                  setInput(
+                    "Brainstorm team bonding activities for our work retreat"
+                  )
+                }
+                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+              >
                 <p className="text-[#585858] text-[17px]">
                   Brainstorm team bonding activities for our work retreat.
                 </p>
@@ -64,7 +112,12 @@ const Main = () => {
                   alt="compass icon"
                 />
               </div>
-              <div className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]">
+              <div
+                onClick={() =>
+                  setInput("Improve the readability of the following code")
+                }
+                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+              >
                 <p className="text-[#585858] text-[17px]">
                   Improve the readability of the following code.
                 </p>
@@ -79,7 +132,7 @@ const Main = () => {
         ) : (
           <div className="px-4 max-h-[70vh] overflow-y-scroll result">
             <div className="flex items-center gap-5 my-10 result-title bg-[#edf1f6] p-2 rounded-lg">
-              <img className="w-10" src={assets.user_icon} alt="" />
+              <BiUserCircle className="text-3xl fill-sky-500"/>
               <p>{recentPrompt}</p>
             </div>
             <div className="flex items-start gap-5 p-2 rounded-lg result-data">
@@ -109,17 +162,7 @@ const Main = () => {
               placeholder="Enter a prompt here"
               className="flex-0 w-[150px] md:w-full md:flex-1 bg-transparent border-none outline-none p-2 md:text-[18px] text-sm"
             />
-            <div className="flex items-center gap-2 md:gap-4">
-              <img
-                className="w-5 cursor-pointer hover:scale-105"
-                src={assets.gallery_icon}
-                alt=""
-              />
-              <img
-                className="w-5 cursor-pointer hover:scale-105"
-                src={assets.mic_icon}
-                alt=""
-              />
+            <div className="flex items-center">
               {input ? (
                 <img
                   onClick={() => onSent()}
@@ -131,7 +174,7 @@ const Main = () => {
             </div>
           </div>
           <p className="bottom-info text-[13px] my-3 text-center font-[300]">
-            Gemini may display incorrect information, including information
+            Codex AI may display incorrect information, including information
             about people, so be sure to confirm your answers.
           </p>
         </div>
