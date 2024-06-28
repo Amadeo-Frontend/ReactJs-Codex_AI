@@ -18,8 +18,8 @@ const Main = () => {
   } = useContext(Context);
 
   return (
-    <div className="main flex-1 min-h-screen pb-[15vh] relative overflow-x-hidden">
-      <div className="nav flex items-center justify-start gap-4 text-2xl p-5 text-[#585858]">
+    <div className="main flex-1 h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden">
+      <div className="nav flex items-center gap-4 text-2xl p-5 text-[#585858]">
         <img
           src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png"
           alt="Robot"
@@ -140,9 +140,7 @@ const Main = () => {
             <div className="flex items-center">
               {input ? (
                 loading ? (
-                  <CircleLoader
-                    size={25} color="#0EA5E9"
-                  />
+                  <CircleLoader size={25} color="#0EA5E9" />
                 ) : (
                   <BsSendFill
                     className="w-6 cursor-pointer fill-blue-600 hover:scale-105"

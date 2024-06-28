@@ -27,7 +27,7 @@ const ContextProvider = (props) => {
     setLoading(true);
     setShowResult(true);
     let response;
-    if (prompt !== undefined) {
+    if (prompt!== undefined) {
       response = await run(prompt);
       setRecentPrompt(prompt);
     } else {
@@ -39,12 +39,17 @@ const ContextProvider = (props) => {
     let responseArray = response.split("**");
     let newResponse = "";
     for (let i = 0; i < responseArray.length; i++) {
-      if (i === 0 || i % 2 !== 1) {
-        newResponse += responseArray[i];
+      if (i === 0 || i % 2!== 1) {
+        if (responseArray[i].includes("{") || responseArray[i].includes("<")) {
+          newResponse += `<pre>${responseArray[i]}</pre>`;
+        } else {
+          newResponse += responseArray[i];
+        }
       } else {
         newResponse += "<b>" + responseArray[i] + "</b>";
       }
     }
+
     let newResponse2 = newResponse.split("*").join("</br>");
     let newResponseArray = newResponse2.split(" ");
     for (let i = 0; i < newResponseArray.length; i++) {
@@ -53,6 +58,11 @@ const ContextProvider = (props) => {
     }
     setLoading(false);
     setInput("");
+
+    // Adiciona o prompt enviado à lista de recentes
+    if (prompt!== undefined) {
+      setPrevPrompts((prev) => [...prev, prompt]);
+    }
   };
 
   const contextValue = {
