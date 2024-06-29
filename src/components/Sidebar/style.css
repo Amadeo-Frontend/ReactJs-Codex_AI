@@ -1,0 +1,20 @@
+/* Estilos para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+.sidebar::-webkit-scrollbar {
+    width: 6px; /* Define a largura da barra de rolagem */
+  }
+  
+  .sidebar::-webkit-scrollbar-track {
+    background: #f0f4f9; /* Cor de fundo da barra de rolagem */
+  }
+  
+  .sidebar::-webkit-scrollbar-thumb {
+    background: #585858; /* Cor do polegar da barra de rolagem */
+    border-radius: 3px; /* Borda arredondada do polegar */
+  }
+  
+  /* Estilos para Firefox */
+  .sidebar {
+    scrollbar-width: thin; /* Define a largura da barra de rolagem como 'thin' */
+    scrollbar-color: #585858 #f0f4f9; /* Cor do polegar e do fundo da barra de rolagem */
+  }
+  

@@ -19,7 +19,7 @@ const Main = () => {
 
 
   return (
-    <div className="main flex-1 h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden">
+    <div className="main flex-1  h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden">
       <div className="nav flex items-center gap-4 text-2xl p-5 text-[#585858]">
         <img
           src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png"
@@ -27,7 +27,7 @@ const Main = () => {
           width="35"
           height="35"
         />
-        <p className="font-bold">Codex AI</p>
+        <p className="font-bold title">Codex AI</p>
       </div>
       <div className="main-container max-w-[900px] lg:mt-10 m-auto">
         {!showResult ? (
@@ -107,10 +107,12 @@ const Main = () => {
           </>
         ) : (
           <div className="px-4 max-h-[70vh] max-w-[850px] pb-[10vh] overflow-y-scroll result">
-            <div className="flex items-center gap-5 my-10 result-title bg-[#edf1f6] p-2 rounded-lg">
+            <div className="flex items-center gap-5 p-2 my-5 rounded-lg result-title">
               <BiUserCircle className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
+              <hr />
             </div>
+            <hr />
             <div className="flex items-start gap-5 p-2 rounded-lg result-data">
               <img className="w-10" src={assets.gemini_icon} alt="" />
               {loading ? (
@@ -133,6 +135,11 @@ const Main = () => {
           <div className="search-box flex items-center justify-between gap-5 bg-[#f0f4f9] px-3 py-2 rounded-[50px]">
             <input
               onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  onSent(input);
+                }
+              }}
               value={input}
               type="text"
               placeholder="Enter a prompt here"

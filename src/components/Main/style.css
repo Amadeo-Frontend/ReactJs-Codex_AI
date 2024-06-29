@@ -1,3 +1,9 @@
+.title{
+  background: -webkit-linear-gradient(16deg, #1c70f8, #a0382e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .greet span {
   background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
   -webkit-background-clip: text;
