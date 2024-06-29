@@ -2,8 +2,7 @@ import { useContext } from "react";
 import { assets } from "../../assets/assets";
 import "./style.css";
 import { Context } from "../../Context/Context";
-import { BiUserCircle } from "react-icons/bi";
-import { BsSendFill } from "react-icons/bs";
+import { IoPersonCircleSharp ,IoSendOutline  } from "react-icons/io5";
 import CircleLoader from "react-spinners/CircleLoader";
 
 const Main = () => {
@@ -108,7 +107,7 @@ const Main = () => {
         ) : (
           <div className="px-4 max-h-[70vh] max-w-[850px] pb-[10vh] overflow-y-scroll result">
             <div className="flex items-center gap-5 p-2 my-5 rounded-lg result-title">
-              <BiUserCircle className="text-3xl fill-sky-500" />
+              <IoPersonCircleSharp  className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
               <hr />
             </div>
@@ -150,7 +149,7 @@ const Main = () => {
                 loading ? (
                   <CircleLoader size={25} color="#0EA5E9" />
                 ) : (
-                  <BsSendFill
+                  <IoSendOutline 
                     className="w-6 cursor-pointer fill-blue-600 hover:scale-105"
                     onClick={() => onSent(input)}
                   />
