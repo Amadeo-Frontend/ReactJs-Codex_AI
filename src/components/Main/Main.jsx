@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { assets } from "../../assets/assets";
+import { motion } from "framer-motion";
 import "./style.css";
 import { Context } from "../../Context/Context";
-import { IoPersonCircleSharp ,IoSendOutline  } from "react-icons/io5";
+import { IoPersonCircleSharp, IoSendOutline } from "react-icons/io5";
 import CircleLoader from "react-spinners/CircleLoader";
+import Reveal from "../Reveal";
 
 const Main = () => {
   const {
@@ -16,9 +18,13 @@ const Main = () => {
     input,
   } = useContext(Context);
 
-
   return (
-    <div className="main flex-1  h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="main flex-1  h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden"
+    >
       <div className="nav flex items-center gap-4 text-2xl p-5 text-[#585858]">
         <img
           src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png"
@@ -38,76 +44,84 @@ const Main = () => {
               <p className="text-xl md:text-4xl">How can i help you today?</p>
             </div>
             <div className="mb-16 md:mb-0 cards">
-              <div
-                onClick={() =>
-                  setInput(
-                    "Suggest beautiful places to see on an upcoming road trip"
-                  )
-                }
-                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
-              >
-                <p className="text-[#585858] text-[17px]">
-                  Suggest beautiful places to see on an upcoming road trip.
-                </p>
-                <img
-                  className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                  src={assets.compass_icon}
-                  alt="compass icon"
-                />
-              </div>
-              <div
-                onClick={() =>
-                  setInput("Briefly summarize this concept: urban planning")
-                }
-                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
-              >
-                <p className="text-[#585858] text-[17px]">
-                  Briefly summarize this concept: urban planning.
-                </p>
-                <img
-                  className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                  src={assets.bulb_icon}
-                  alt="compass icon"
-                />
-              </div>
-              <div
-                onClick={() =>
-                  setInput(
-                    "Brainstorm team bonding activities for our work retreat"
-                  )
-                }
-                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
-              >
-                <p className="text-[#585858] text-[17px]">
-                  Brainstorm team bonding activities for our work retreat.
-                </p>
-                <img
-                  className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                  src={assets.message_icon}
-                  alt="compass icon"
-                />
-              </div>
-              <div
-                onClick={() =>
-                  setInput("Improve the readability of the following code")
-                }
-                className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
-              >
-                <p className="text-[#585858] text-[17px]">
-                  Improve the readability of the following code.
-                </p>
-                <img
-                  className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                  src={assets.code_icon}
-                  alt="compass icon"
-                />
-              </div>
+              <Reveal>
+                <div
+                  onClick={() =>
+                    setInput(
+                      "Suggest beautiful places to see on an upcoming road trip"
+                    )
+                  }
+                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                >
+                  <p className="text-[#585858] text-[17px]">
+                    Suggest beautiful places to see on an upcoming road trip.
+                  </p>
+                  <img
+                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
+                    src={assets.compass_icon}
+                    alt="compass icon"
+                  />
+                </div>
+              </Reveal>
+              <Reveal>
+                <div
+                  onClick={() =>
+                    setInput("Briefly summarize this concept: urban planning")
+                  }
+                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                >
+                  <p className="text-[#585858] text-[17px]">
+                    Briefly summarize this concept: urban planning.
+                  </p>
+                  <img
+                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
+                    src={assets.bulb_icon}
+                    alt="compass icon"
+                  />
+                </div>
+              </Reveal>
+              <Reveal>
+                <div
+                  onClick={() =>
+                    setInput(
+                      "Brainstorm team bonding activities for our work retreat"
+                    )
+                  }
+                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                >
+                  <p className="text-[#585858] text-[17px]">
+                    Brainstorm team bonding activities for our work retreat.
+                  </p>
+                  <img
+                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
+                    src={assets.message_icon}
+                    alt="compass icon"
+                  />
+                </div>
+              </Reveal>
+              <Reveal>
+                <div
+                  onClick={() =>
+                    setInput("Improve the readability of the following code")
+                  }
+                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                >
+                  <p className="text-[#585858] text-[17px]">
+                    Improve the readability of the following code.
+                  </p>
+                  <img
+                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
+                    src={assets.code_icon}
+                    alt="compass icon"
+                  />
+                </div>
+              </Reveal>
             </div>
           </>
         ) : (
           <div className="px-4 max-h-[70vh] max-w-[850px] pb-[10vh] overflow-y-scroll result">
             <div className="flex items-center gap-5 p-2 my-5 rounded-lg result-title">
-              <IoPersonCircleSharp  className="text-3xl fill-sky-500" />
+              <IoPersonCircleSharp className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
               <hr />
             </div>
@@ -135,7 +149,7 @@ const Main = () => {
             <input
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === 'Enter') {
+                if (e.key === "Enter") {
                   onSent(input);
                 }
               }}
@@ -149,7 +163,7 @@ const Main = () => {
                 loading ? (
                   <CircleLoader size={25} color="#0EA5E9" />
                 ) : (
-                  <IoSendOutline 
+                  <IoSendOutline
                     className="w-6 cursor-pointer fill-blue-600 hover:scale-105"
                     onClick={() => onSent(input)}
                   />
@@ -163,7 +177,7 @@ const Main = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

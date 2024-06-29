@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Context } from "../../Context/Context";
+import { motion } from "framer-motion";
 import { BsCodeSlash, BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
-import './style.css'
+import "./style.css";
 
 const Sidebar = () => {
   const [extended, setExtended] = useState(false);
@@ -13,7 +14,12 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar hidden h-screen overflow-y-auto px-4 py-4 md:flex flex-col justify-between bg-[#f0f4f9]">
+    <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="sidebar hidden h-screen overflow-y-auto px-4 py-4 md:flex flex-col justify-between bg-[#f0f4f9]"
+    >
       <div className="top">
         <img
           onClick={() => setExtended((prev) => !prev)}
@@ -79,7 +85,7 @@ const Sidebar = () => {
           </p>
         ) : null}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
