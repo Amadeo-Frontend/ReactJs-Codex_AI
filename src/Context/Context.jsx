@@ -27,7 +27,7 @@ const ContextProvider = (props) => {
     setLoading(true);
     setShowResult(true);
     let response;
-    if (prompt!== undefined) {
+    if (prompt !== undefined) {
       response = await run(prompt);
       setRecentPrompt(prompt);
     } else {
@@ -39,9 +39,9 @@ const ContextProvider = (props) => {
     let responseArray = response.split("**");
     let newResponse = "";
     for (let i = 0; i < responseArray.length; i++) {
-      if (i === 0 || i % 2!== 1) {
+      if (i === 0 || i % 2 !== 1) {
         if (responseArray[i].includes("{") || responseArray[i].includes("<")) {
-          newResponse += `<pre>${responseArray[i]}</pre>`;
+          newResponse += `<pre style=" background-color: #333; color: #f5f5f5; padding: 10px; border-radius: 5px; word-wrap: break-word; max-width: 100%; overflow-wrap: break-word;"">${responseArray[i]}</pre>`;
         } else {
           newResponse += responseArray[i];
         }
@@ -60,7 +60,7 @@ const ContextProvider = (props) => {
     setInput("");
 
     // Adiciona o prompt enviado à lista de recentes
-    if (prompt!== undefined) {
+    if (prompt !== undefined) {
       setPrevPrompts((prev) => [...prev, prompt]);
     }
   };
@@ -76,7 +76,7 @@ const ContextProvider = (props) => {
     resultData,
     input,
     setInput,
-    newChat
+    newChat,
   };
   return (
     <Context.Provider value={contextValue}>{props.children}</Context.Provider>

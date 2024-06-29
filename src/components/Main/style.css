@@ -26,7 +26,7 @@
   border-radius: 4px;
   border: none;
   background-color: #f6f7f8;
-  background: linear-gradient(to right, #9ed7ff, #ffff, #9ed7ff);
+  background: linear-gradient(to right, #7bb2ff, #ffff, #7bb2ff);
   background-size: 800px 50px;
   height: 20px;
   animation: loader 3s infinite linear;

@@ -17,6 +17,7 @@ const Main = () => {
     input,
   } = useContext(Context);
 
+
   return (
     <div className="main flex-1 h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden">
       <div className="nav flex items-center gap-4 text-2xl p-5 text-[#585858]">
@@ -105,7 +106,7 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div className="px-4 max-h-[70vh] overflow-y-scroll result">
+          <div className="px-4 max-h-[70vh] max-w-[850px] pb-[10vh] overflow-y-scroll result">
             <div className="flex items-center gap-5 my-10 result-title bg-[#edf1f6] p-2 rounded-lg">
               <BiUserCircle className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
