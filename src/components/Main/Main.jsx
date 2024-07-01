@@ -44,13 +44,13 @@ const Main = () => {
       <div className="main-container max-w-[900px] lg:mt-10 m-auto">
         {!showResult ? (
           <>
-            <div className="greet mx-[50px] my-0 text-[56px] text-[#c4c7c5] font-[500] p-5">
+            <div className="greet mx-[50px] my-24 md:my-0 text-[56px] text-[#c4c7c5] font-[500] p-5">
               <p className="span">
-                <span className="text-xl md:text-4xl">
+                <span className="text-3xl md:text-4xl">
                   Hello, I&apos;m Codex
                 </span>
               </p>
-              <p className="text-xl md:text-4xl">How can i help you today?</p>
+              <p className="text-3xl md:text-4xl">How can i help you today?</p>
             </div>
             <div className="mb-16 md:mb-0 cards">
               <Reveal>
@@ -60,7 +60,7 @@ const Main = () => {
                       "What are some specific locations or landmarks that you would recommend for this road trip?"
                     )
                   }
-                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                  className="card hidden md:block h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
                     What are some specific locations or landmarks that you would
@@ -76,7 +76,7 @@ const Main = () => {
                       "Briefly summarize this concept: software development."
                     )
                   }
-                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                  className="card hidden md:block h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
                     Briefly summarize this concept: software development.
@@ -91,7 +91,7 @@ const Main = () => {
                       "Brainstorm Scrum-themed team bonding activities for our Agile work retreat."
                     )
                   }
-                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                  className="card hidden md:block h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
                     Brainstorm Scrum-themed team bonding activities for our
@@ -107,7 +107,7 @@ const Main = () => {
                       "How does React compare to other popular frontend frameworks?"
                     )
                   }
-                  className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
+                  className="card hidden md:block h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
                     How does React compare to other popular frontend frameworks?
@@ -118,7 +118,7 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div className="px-4 max-h-[60vh] rounded-lg max-w-[850px] pb-[5vh] overflow-y-scroll shadow-md result">
+          <div className="px-4 mx-2 max-h-[60vh] rounded-lg max-w-[850px] pb-[5vh] overflow-y-scroll shadow-md result">
             <div className="flex items-center gap-5 p-2 my-5 rounded-lg bg-[#e9e9e9] result-title">
               <IoPersonCircleSharp className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
