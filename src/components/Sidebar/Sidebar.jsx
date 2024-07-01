@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { assets } from "../../assets/assets";
 import { Context } from "../../Context/Context";
 import { motion } from "framer-motion";
+import { IoAddSharp, IoMenuSharp  } from "react-icons/io5";
 import { BsCodeSlash, BsGithub, BsInstagram, BsLinkedin } from "react-icons/bs";
 import "./style.css";
 
@@ -21,18 +22,16 @@ const Sidebar = () => {
       className="sidebar hidden h-screen overflow-y-auto px-4 py-4 md:flex flex-col justify-between bg-[#f0f4f9]"
     >
       <div className="top">
-        <img
+        <IoMenuSharp 
           onClick={() => setExtended((prev) => !prev)}
-          className="block w-5 ml-3 cursor-pointer menu"
-          src={assets.menu_icon}
-          alt="menu icon"
+          className="block ml-2 text-3xl cursor-pointer menu"
         />
         <div
           onClick={() => newChat()}
           className="new-chat my-12 inline-flex items-center gap-3 px-3 py-2 bg-[#e6eaf1] rounded-full text-sm text-gray-500 cursor-pointer hover:scale-105"
         >
-          <img className="w-5" src={assets.plus_icon} alt="plus icon" />
-          {extended ? <p className="font-medium">New Chat</p> : null}
+          <IoAddSharp className="text-2xl" />
+          {extended ? <p className="font-medium">New Thread</p> : null}
         </div>
         {extended ? (
           <div className="flex flex-col overflow-y-auto sidebar recent max-h-recent-list">

@@ -3,7 +3,14 @@ import { assets } from "../../assets/assets";
 import { motion } from "framer-motion";
 import "./style.css";
 import { Context } from "../../Context/Context";
-import { IoPersonCircleSharp, IoSendOutline } from "react-icons/io5";
+import {
+  IoPersonCircleSharp,
+  IoSendOutline,
+  IoBulbOutline,
+  IoChatbubbleEllipsesOutline,
+  IoCodeSlashOutline,
+  IoCompassOutline,
+} from "react-icons/io5";
 import CircleLoader from "react-spinners/CircleLoader";
 import Reveal from "../Reveal";
 
@@ -23,7 +30,7 @@ const Main = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="main flex-1 bg-[#f3f3f3]  h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden"
+      className="main flex-1 bg-[#fff8f8]  h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden"
     >
       <div className="nav flex items-center gap-4 text-2xl p-5 text-[#585858]">
         <img
@@ -59,11 +66,7 @@ const Main = () => {
                     What are some specific locations or landmarks that you would
                     recommend for this road trip?
                   </p>
-                  <img
-                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                    src={assets.compass_icon}
-                    alt="compass icon"
-                  />
+                  <IoCompassOutline className="absolute p-1 text-4xl bottom-3 right-3" />
                 </div>
               </Reveal>
               <Reveal>
@@ -78,11 +81,7 @@ const Main = () => {
                   <p className="text-[#585858] text-[17px]">
                     Briefly summarize this concept: software development.
                   </p>
-                  <img
-                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                    src={assets.bulb_icon}
-                    alt="compass icon"
-                  />
+                  <IoBulbOutline className="absolute p-1 text-4xl bottom-3 right-3" />
                 </div>
               </Reveal>
               <Reveal>
@@ -98,11 +97,7 @@ const Main = () => {
                     Brainstorm Scrum-themed team bonding activities for our
                     Agile work retreat.
                   </p>
-                  <img
-                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                    src={assets.message_icon}
-                    alt="compass icon"
-                  />
+                  <IoChatbubbleEllipsesOutline className="absolute p-1 text-4xl bottom-3 right-3" />
                 </div>
               </Reveal>
               <Reveal>
@@ -117,11 +112,7 @@ const Main = () => {
                   <p className="text-[#585858] text-[17px]">
                     How does React compare to other popular frontend frameworks?
                   </p>
-                  <img
-                    className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
-                    src={assets.code_icon}
-                    alt="compass icon"
-                  />
+                  <IoCodeSlashOutline className="absolute p-1 text-4xl bottom-3 right-3" />
                 </div>
               </Reveal>
             </div>
