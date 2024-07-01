@@ -9,6 +9,7 @@ O Projeto Codex AI Chatbot é uma aplicação web interativa que permite aos usu
 - **Front-end:** React Js
 - **Gerenciamento de Estado:** Context API do React
 - **Estilização:** CSS puro com TailwindCSS
+- **Animações:** Framer-motion
 - **Ícones:** React Icons
 - **Loader:** react-loader-spinner
 - **API Externa:** Gemini API para geração de respostas
