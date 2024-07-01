@@ -29,14 +29,14 @@ const Sidebar = () => {
         />
         <div
           onClick={() => newChat()}
-          className="new-chat mt-12 inline-flex items-center gap-3 px-3 py-2 bg-[#e6eaf1] rounded-full text-sm text-gray-500 cursor-pointer hover:scale-105"
+          className="new-chat my-12 inline-flex items-center gap-3 px-3 py-2 bg-[#e6eaf1] rounded-full text-sm text-gray-500 cursor-pointer hover:scale-105"
         >
           <img className="w-5" src={assets.plus_icon} alt="plus icon" />
           {extended ? <p className="font-medium">New Chat</p> : null}
         </div>
         {extended ? (
-          <div className="flex flex-col overflow-y-auto recent max-h-recent-list">
-            <p className="p-3 mt-8 mb-1 recent-title">Recent</p>
+          <div className="flex flex-col overflow-y-auto sidebar recent max-h-recent-list">
+            <p className="flex-1 p-3 mt-2 mb-1 recent-title">Recent</p>
             {prevPrompts.map((item, index) => {
               return (
                 <>

@@ -23,7 +23,7 @@ const Main = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="main flex-1  h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden"
+      className="main flex-1 bg-[#f3f3f3]  h-screen pb-[15vh] relative overflow-x-hidden overflow-y-hidden"
     >
       <div className="nav flex items-center gap-4 text-2xl p-5 text-[#585858]">
         <img
@@ -39,7 +39,9 @@ const Main = () => {
           <>
             <div className="greet mx-[50px] my-0 text-[56px] text-[#c4c7c5] font-[500] p-5">
               <p className="span">
-                <span className="text-xl md:text-4xl">Hello, Dev.</span>
+                <span className="text-xl md:text-4xl">
+                  Hello, I&apos;m Codex
+                </span>
               </p>
               <p className="text-xl md:text-4xl">How can i help you today?</p>
             </div>
@@ -48,13 +50,14 @@ const Main = () => {
                 <div
                   onClick={() =>
                     setInput(
-                      "Suggest beautiful places to see on an upcoming road trip"
+                      "What are some specific locations or landmarks that you would recommend for this road trip?"
                     )
                   }
                   className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
-                    Suggest beautiful places to see on an upcoming road trip.
+                    What are some specific locations or landmarks that you would
+                    recommend for this road trip?
                   </p>
                   <img
                     className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
@@ -66,12 +69,14 @@ const Main = () => {
               <Reveal>
                 <div
                   onClick={() =>
-                    setInput("Briefly summarize this concept: urban planning")
+                    setInput(
+                      "Briefly summarize this concept: software development."
+                    )
                   }
                   className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
-                    Briefly summarize this concept: urban planning.
+                    Briefly summarize this concept: software development.
                   </p>
                   <img
                     className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
@@ -84,13 +89,14 @@ const Main = () => {
                 <div
                   onClick={() =>
                     setInput(
-                      "Brainstorm team bonding activities for our work retreat"
+                      "Brainstorm Scrum-themed team bonding activities for our Agile work retreat."
                     )
                   }
                   className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
-                    Brainstorm team bonding activities for our work retreat.
+                    Brainstorm Scrum-themed team bonding activities for our
+                    Agile work retreat.
                   </p>
                   <img
                     className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
@@ -102,12 +108,14 @@ const Main = () => {
               <Reveal>
                 <div
                   onClick={() =>
-                    setInput("Improve the readability of the following code")
+                    setInput(
+                      "How does React compare to other popular frontend frameworks?"
+                    )
                   }
                   className="card h-[200px] p-4 bg-[#f0f4f9] rounded-xl relative cursor-pointer hover:bg-[#dfe4ea]"
                 >
                   <p className="text-[#585858] text-[17px]">
-                    Improve the readability of the following code.
+                    How does React compare to other popular frontend frameworks?
                   </p>
                   <img
                     className="w-9 p-1 absolute bg-[#fff] rounded-[20px] bottom-3 right-3"
@@ -119,13 +127,11 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div className="px-4 max-h-[70vh] max-w-[850px] pb-[10vh] overflow-y-scroll result">
-            <div className="flex items-center gap-5 p-2 my-5 rounded-lg result-title">
+          <div className="px-4 max-h-[60vh] rounded-lg max-w-[850px] pb-[5vh] overflow-y-scroll shadow-md result">
+            <div className="flex items-center gap-5 p-2 my-5 rounded-lg bg-[#e9e9e9] result-title">
               <IoPersonCircleSharp className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
-              <hr />
             </div>
-            <hr />
             <div className="flex items-start gap-5 p-2 rounded-lg result-data">
               <img className="w-10" src={assets.gemini_icon} alt="" />
               {loading ? (

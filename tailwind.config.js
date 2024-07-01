@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       maxHeight: {
-        'recent-list': '400px', // Defina a altura máxima desejada
+        'recent-list': '200px', // Defina a altura máxima desejada
       },
     },
   },
