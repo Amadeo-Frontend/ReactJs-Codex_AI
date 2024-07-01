@@ -118,7 +118,7 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div className="px-4 mx-2 max-h-[60vh] rounded-lg max-w-[850px] pb-[5vh] overflow-y-scroll shadow-md result">
+          <div className="px-4 mx-2 max-h-[60vh] rounded-lg max-w-[850px] pb-[5vh] overflow-y-scroll shadow-sm result">
             <div className="flex items-center gap-5 p-2 my-5 rounded-lg bg-[#e9e9e9] result-title">
               <IoPersonCircleSharp className="text-3xl fill-sky-500" />
               <p>{recentPrompt}</p>
