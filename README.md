@@ -19,6 +19,9 @@ O Projeto Codex AI Chatbot é uma aplicação web interativa que permite aos usu
 https://github.com/Amadeo-Frontend/ReactJs-Codex_AI/assets/104178969/0ad489c0-18af-48fc-865b-0de599c721e8
 
 
+## Live
+
+https://codex-ai-bice.vercel.app/
 
 ## 🎈 Funcionalidades
 
