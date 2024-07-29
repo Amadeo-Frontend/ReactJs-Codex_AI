@@ -31,7 +31,7 @@ const Sidebar = () => {
           className="new-chat my-12 inline-flex items-center gap-3 px-3 py-2 bg-[#e6eaf1] rounded-full text-sm text-gray-500 cursor-pointer hover:scale-105"
         >
           <IoAddSharp className="text-2xl" />
-          {extended ? <p className="font-medium">New Thread</p> : null}
+          {extended ? <p className="font-medium">New Chat</p> : null}
         </div>
         {extended ? (
           <div className="flex flex-col overflow-y-auto sidebar recent max-h-recent-list">
@@ -59,28 +59,18 @@ const Sidebar = () => {
         ) : null}
       </div>
       <div className="flex flex-col gap-3 bottom">
-        <a href="https://github.com/Amadeo-Frontend" target="_blank">
+        <a href="https://github.com/SkipScaped" target="_blank">
           <div className="bottom-item  flex items-center gap-3 p-3 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
             <BsGithub />
             {extended ? <p>Github</p> : null}
           </div>
         </a>
-        <a href="https://www.instagram.com/amadeo_bon/" target="_blank">
-          <div className="bottom-item flex items-center gap-3 p-3 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
-            <BsInstagram className="fill-red-600" />
-            {extended ? <p>Instagram</p> : null}
-          </div>
-        </a>
-        <a href="https://www.linkedin.com/in/amadeo-bon/" target="_blank">
-          <div className="bottom-item flex items-center gap-3 p-3 rounded-full text-gray-700 cursor-pointer hover:bg-[#e2e6eb]">
-            <BsLinkedin className="fill-blue-500" />
-            {extended ? <p>Linkedin</p> : null}
-          </div>
-        </a>
+
+
 
         {extended ? (
           <p className="text-[13px] my-3 text-center font-[300] flex gap-2 items-center">
-            <BsCodeSlash className="fill-sky-500" /> Developed by Amadeo Bon{" "}
+            <BsCodeSlash className="fill-sky-500" /> Developed by Aaliyan{" "}
           </p>
         ) : null}
       </div>

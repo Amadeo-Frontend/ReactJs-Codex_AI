@@ -39,7 +39,7 @@ const Main = () => {
           width="35"
           height="35"
         />
-        <p className="font-bold title">Codex AI</p>
+        <p className="font-bold title">Codexal AI</p>
       </div>
       <div className="main-container max-w-[900px] lg:mt-10 m-auto">
         {!showResult ? (
@@ -47,7 +47,7 @@ const Main = () => {
             <div className="greet mx-[50px] my-24 md:my-0 text-[56px] text-[#c4c7c5] font-[500] p-5">
               <p className="span">
                 <span className="text-3xl md:text-4xl">
-                  Hello, I&apos;m Codex
+                  Hello, I&apos;m Codexal AI
                 </span>
               </p>
               <p className="text-3xl md:text-4xl">How can i help you today?</p>
@@ -169,7 +169,7 @@ const Main = () => {
             </div>
           </div>
           <p className="bottom-info text-[13px] my-3 text-center font-[300]">
-            Codex AI may display incorrect information, including information
+            Codexal AI may display incorrect information, including information
             about people, so be sure to confirm your answers.
           </p>
         </div>
